@@ -12,19 +12,16 @@ import { MaterialModule } from './material/material/material.module';
 import { DoctorComponent } from './component/dashboard/doctor/doctor.component';
 import { PatientComponent } from './component/dashboard/patient/patient.component';
 import { SidebarComponent } from './component/dashboard/sidebar/sidebar.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
+import { AddDoctorComponent } from './component/dashboard/doctor/add-doctor/add-doctor.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     DoctorComponent,
     PatientComponent,
-    SidebarComponent
+    SidebarComponent,
+    AddDoctorComponent
   ],
   imports: [
     BrowserModule,
@@ -33,14 +30,11 @@ import { MatListModule } from '@angular/material/list';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FirestoreModule,
     MaterialModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[AddDoctorComponent]
 })
 export class AppModule { }

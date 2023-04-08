@@ -1,0 +1,12 @@
+.add-doc-form{
+    /* width: 100%; */
+    width: 700px;
+    /* min-height: 400px; */
+ /* margin-top: 10px; */
+}
+.mat-grid-list{
+    overflow: hidden;
+}
+.mat-mdc-radio-button {
+    margin-right: 10px;
+  }

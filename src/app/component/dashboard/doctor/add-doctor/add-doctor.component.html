@@ -1,0 +1,69 @@
+<h2 mat-dialog-title>{{title}}</h2>
+<mat-divider></mat-divider>
+<mat-dialog-content [formGroup]="form"  class="add-doc-form">
+    <mat-grid-list cols="2">
+        <mat-grid-tile >
+            <div>
+                <br>
+                <mat-form-field>
+                    <mat-label>Full Name</mat-label>
+                    <input matInput placeholder="pat@example.com" formControlName="name" required>
+                    <mat-error *ngIf="form.get('name')?.invalid||form.get('name')?.touched">Enter valid name</mat-error>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Mobile Number</mat-label>
+                    <input matInput placeholder="454547887" formControlName="mobile" required>
+                    <mat-error *ngIf="form.get('mobile')?.invalid||form.get('mobile')?.touched">Enter valid mobile
+                        phone</mat-error>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>E Mail</mat-label>
+                    <input matInput placeholder="pat@example.com" formControlName="email" required>
+                    <mat-error *ngIf="form.get('email')?.invalid||form.get('email')?.touched">Enter valid E-mail adress
+                    </mat-error>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Qualification</mat-label>
+                    <input matInput placeholder="pat@example.com" formControlName="qualification" required>
+                    <mat-error *ngIf="form.get('qualify')?.invalid||form.get('qualify')?.touched">Enter valid
+                        Qualification</mat-error>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div>
+                <mat-label>Gender</mat-label>
+                <br>
+                <mat-radio-group aria-label="Select an gender" color="primary" formControlName="gender">
+                    <mat-radio-button value="male">Male</mat-radio-button>
+                    <mat-radio-button value="female">Female</mat-radio-button>
+                    <mat-radio-button value="other">Other</mat-radio-button>
+                </mat-radio-group>
+                
+                <mat-form-field>
+                    <mat-label>Department</mat-label>
+                    <mat-select formControlName="department" name="department">
+                        <mat-option *ngFor="let department of departments" [value]="department">{{department}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Birth Date</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="birthDate">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-error *ngIf="form.get('birthDate')?.invalid||form.get('birthDate')?.touched">Choose valid birth Date</mat-error>
+                </mat-form-field>
+               
+            </div>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+</mat-dialog-content>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="cancelRegistration()">Cancel</button>
+    <button mat-flat-button color="primary" cdkFocusInitial (click)="registerDoctor()" [disabled]="false">Register</button>
+  </div>
