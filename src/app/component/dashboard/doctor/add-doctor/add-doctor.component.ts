@@ -53,7 +53,7 @@ this.title=data.title;
 
 ngOnInit(): void{
   this.form=this.fb.group({
-    id:['',[]],
+   // id:['',[]],
     name:['',[Validators.required]],
     mobile:['',[Validators.required,Validators.maxLength(10),Validators.minLength(10)]],
     email:['',[Validators.required]],

@@ -17,7 +17,8 @@ import { MatNativeDateModule ,MatRippleModule} from '@angular/material/core';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 @NgModule({
   declarations: [],
-  imports: [ MatCardModule,
+  imports: [ 
+    MatCardModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
@@ -37,7 +38,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
   
 
    ],
-  exports:[MatCardModule,
+  exports:[
+    MatCardModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,

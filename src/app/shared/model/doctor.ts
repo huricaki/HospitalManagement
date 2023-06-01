@@ -1,5 +1,5 @@
 export interface Doctor {
-    id:string;
+    //id:string;
     name: string;
     mobile: string;
     email: string;

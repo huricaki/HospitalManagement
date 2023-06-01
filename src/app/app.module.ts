@@ -1,37 +1,35 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import {AngularFireModule} from '@angular/fire/compat';
-// import {AngularFirestore, AngularFirestoreModule} from '@angular/fire/compat/firestore'
-import { FirestoreModule } from '@angular/fire/firestore';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { environment } from 'src/environments/environment';
 import { MaterialModule } from './material/material/material.module';
 import { DoctorComponent } from './component/dashboard/doctor/doctor.component';
 import { PatientComponent } from './component/dashboard/patient/patient.component';
 import { SidebarComponent } from './component/dashboard/sidebar/sidebar.component';
 import { AddDoctorComponent } from './component/dashboard/doctor/add-doctor/add-doctor.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
+import { DoctorListComponent } from './component/dashboard/doctor/doctor-list/doctor-list.component';
 @NgModule({
   declarations: [
     AppComponent,
     DoctorComponent,
     PatientComponent,
     SidebarComponent,
-    AddDoctorComponent
+    AddDoctorComponent,
+    DoctorListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    FirestoreModule,
     MaterialModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

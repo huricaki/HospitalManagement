@@ -30,7 +30,8 @@ export class DoctorComponent {
     const dialogRef=this.dialog.open(AddDoctorComponent,dialogConfig);
   dialogRef.afterClosed().subscribe(data=>{
     if(data){
-      this.dataApi.addDoctor(data);
+      this.dataApi.addDoctor(JSON.stringify(data));
+      console.log('apiye gönderildi '+ JSON.stringify(data));
       this.openSnackBar("Registration of doctor successful.","OK");
     }
   })
